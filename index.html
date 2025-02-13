@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 0.8s ease-in-out;
+            transform: translateY(20px);
+        }
+        .active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .book {
+            display: flex;
+            gap: 20px;
+            transform-origin: center;
+            animation: flipIn 1s ease-in-out;
+        }
+        .page {
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px; /* Fixed width */
+    min-height: 300px; /* Ensures proper size */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page img {
+    width: 100%;
+    max-height: 180px; /* Restrict image height */
+    object-fit: contain; /* Prevents cropping */
+    border-radius: 10px;
+}
+
+.page p {
+    font-size: 14px; /* Adjusted for better fit */
+    word-wrap: break-word; /* Ensures text fits */
+    white-space: normal; /* Prevents overflow */
+    padding: 10px;
+    text-align: center;
+}
+
+        .page:hover {
+            transform: scale(1.05) rotateY(10deg);
+        }
+        .page:active {
+            transform: scale(1.2) rotateY(0);
+            z-index: 10;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        button:hover {
+            background: darkred;
+            transform: scale(1.05);
+        }
+        @keyframes flipIn {
+            from {
+                transform: rotateY(-90deg);
+                opacity: 0;
+            }
+            to {
+                transform: rotateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in {
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .page {
+                width: 100%;
+                max-width: 320px;
+            }
+            button {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="step0" class="container active">
+        <h1 class="fade-in">Hi ❤️</h1>
+        <button onclick="nextStep(1)">Next</button>
+    </div>
+
+    <div id="step1" class="container">
+        <p class="fade-in">My Love, My Heart, My Forever</p>
+        <p class="fade-in">I know the past few days have been rough, and I have hurt you in ways I never should have. If I could, I would turn back time and erase every tear, every moment of pain I caused you. But since I can't, I promise to spend every moment ahead proving my love for you, making up for every mistake, and ensuring that our love only grows stronger.</p>
+        <p class="fade-in">You are the most beautiful part of my life, my greatest blessing, and the reason my world feels complete. Losing you, even for a second, made me realize how deeply I need you, how much my heart beats only for you. You are my home, my safe place, and the love I never want to take for granted again.</p>
+        <p class="fade-in">On this Valentine’s Day, I don’t just want to celebrate love—I want to celebrate <em>our love</em>, the bond that makes us who we are. You are my soulmate, my best friend, my reason to believe in forever. I vow to cherish, respect, and love you with all my heart, today and always.</p>
+        <p class="fade-in">Please forgive me, my love. I will spend every day proving to you that you are my greatest treasure.</p>
+        <p class="fade-in">Happy Valentine’s Day, my love. ❤️</p>
+        <p class="fade-in">Forever and always yours, <br> Ankit</p>
+        <button onclick="nextStep(2)">Next</button>
+    </div>
+
+    <div id="step2" class="container">
+        <h2 class="fade-in">Some Moments from our Story 📖</h2>
+        <button onclick="nextStep(3)">Open Book</button>
+    </div>
+
+    <div id="step3" class="container">
+        <div class="book fade-in">
+            <div class="page">
+                <img src="./assets/img/image 6.jpg" alt="Page 1">
+                <p>Our first special moment together ❤️</p>
+                <p>Still can't forget how mesmerising that moment was when i first saw you my princess , a girl trusting a boy who she never met 
+                        and coming to meet him all on her own....
+                </p>
+            </div>
+            <div class="page">
+                <img src="./assets/img/image 5.jpg" alt="Page 2">
+                <p>Still remember your touch while holding hands with you</p>
+                <p>Your touch is my safe place, a silent promise that we are always together. Every time our fingers intertwine, I feel the warmth of your love, the unspoken words, and the endless journey we share. Holding your hand is holding my heart in yours. ❤️</p>
+            </div>
+        </div>
+        <button onclick="nextStep(4)">Next</button>
+    </div>
+
+    <div id="step4" class="container">
+        <div class="book fade-in">
+            <div class="page">
+                <img src="./assets/img/image1.jpg" alt="Page 1">
+                
+                <p>Every time I look at you, I don’t just see the love of my life—I see the strongest, most incredible woman I’ve ever known. Your strength, your kindness, and your unwavering heart inspire me every single day. You are my rock,
+                     my safe place, and the most beautiful soul I've ever been blessed to love. ❤️
+                </p>
+            </div>
+            <div class="page">
+                <img src="./assets/img/image 7.jpg" alt="Page 2">
+                <p>Still remember holding you in my arms</p>
+                <p>In your arms, I find my home. No matter how chaotic the world gets, 
+                    this is where I feel safe, at peace, and truly loved. Holding you close, I know there’s nowhere else I’d rather be—because you are my forever. ❤️</p>
+            </div>
+        </div>
+        <button onclick="nextStep(5)">Next</button>
+    </div>
+
+    <div id="step5" class="container">
+        <div class="book fade-in">
+            <div class="page">
+                <img src="./assets/img/image 3.jpg" alt="Page 1">
+                <p>Here is answer to the letter ❤️</p>
+                
+                <p> Dear biwi urf manu,   Thanks for making it happen too...we'll meet soon and feel
+                    each other really soon  next to each other beta.i know things been really hard for you from
+                    past these days i'm sorry for everything meri jaan. this distance will really gonnna be close between us making us
+                    staying close to each other soon. i m blushing too just from the thought that soon i'll be holding my wife in my arms ...
+                    hope everything will gonna be even better holding each other soon enough. hoping to see u again. mrs sharma your mr sharma 
+                    loves you with the core of his heart.
+                    i Love you a lot ❤️.... looking forward to have you in my arms again.
+                your husband Ashu</p>
+                
+            </div>
+            
+        </div>
+        <button onclick="nextStep(6)">Next</button>
+    </div>
+
+    <div id="step6" class="container">
+        <p class="fade-in">Agar mai likhun kitaab</p>
+        <p class="fade-in">To tujhe apna likhunga</p>
+        
+        <p class="fade-in">Khuli aakho se dekha hua sapna likhunga</p>
+        <p class="fade-in">Likh kar saare dukh apne hisse mein</p>
+        <p class="fade-in">Tere hisse mein sirf hasna likhunga</p>
+        <button onclick="nextStep(7)">Next</button>
+    </div>
+
+    <div id="step7" class="container">
+        <h2 class="fade-in">The End ❤️</h2>
+        <p class="fade-in">Forever yours...</p>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            document.querySelectorAll('.container').forEach(div => {
+                div.classList.remove('active');
+            });
+            setTimeout(() => {
+                document.getElementById('step' + step).classList.add('active');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
